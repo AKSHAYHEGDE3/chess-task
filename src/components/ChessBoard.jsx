@@ -33,21 +33,21 @@ const ChessBoard = () => {
   }
 
   useEffect(() => {
-    console.log(yAxis[yAxis.indexOf(clickedTile.split("")[1])]);
-    console.log(xAxis[xAxis.indexOf(clickedTile.split("")[0])]);
-    let column = yAxis.indexOf(clickedTile.split("")[1]);
-    let row = xAxis.indexOf(clickedTile.split("")[0]);
+    if (clickedTile !== "") {
+      let column = yAxis.indexOf(clickedTile.split("")[1]);
+      let row = xAxis.indexOf(clickedTile.split("")[0]);
 
-    const p1 = xAxis[row + 1] + yAxis[column + 2];
-    const p2 = xAxis[row - 1] + yAxis[column + 2];
-    const p3 = xAxis[row + 1] + yAxis[column - 2];
-    const p4 = xAxis[row - 1] + yAxis[column - 2];
-    const p5 = xAxis[row + 2] + yAxis[column + 1];
-    const p6 = xAxis[row + 2] + yAxis[column - 1];
-    const p7 = xAxis[row - 2] + yAxis[column + 1];
-    const p8 = xAxis[row - 2] + yAxis[column - 1];
+      const p1 = xAxis[row + 1] + yAxis[column + 2];
+      const p2 = xAxis[row - 1] + yAxis[column + 2];
+      const p3 = xAxis[row + 1] + yAxis[column - 2];
+      const p4 = xAxis[row - 1] + yAxis[column - 2];
+      const p5 = xAxis[row + 2] + yAxis[column + 1];
+      const p6 = xAxis[row + 2] + yAxis[column - 1];
+      const p7 = xAxis[row - 2] + yAxis[column + 1];
+      const p8 = xAxis[row - 2] + yAxis[column - 1];
 
-    setPositions([p1, p2, p3, p4, p5, p6, p7, p8]);
+      setPositions([p1, p2, p3, p4, p5, p6, p7, p8]);
+    }
   }, [clickedTile]);
 
   console.log(clickedTile);
